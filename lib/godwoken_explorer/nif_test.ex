@@ -1,0 +1,7 @@
+defmodule Godwoken.NifTest do
+    use Rustler, otp_app: :godwoken_explorer, crate: :godwoken_niftest
+
+    # When your NIF is loaded, it will override this function.
+    def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)
+    def parse_deposition_lock_args(_a), do: :erlang.nif_error(:nif_not_loaded)
+end
